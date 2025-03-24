@@ -9,7 +9,6 @@ Implementation of cyclic coordinate descent for regularized logistic regression
 ## Project Organization
 
 ```
-├── LICENSE            <- Open-source license if one is chosen
 ├── Makefile           <- Makefile with convenience commands like `make data` or `make train`
 ├── README.md          <- The top-level README for developers using this project.
 ├── data
@@ -36,8 +35,6 @@ Implementation of cyclic coordinate descent for regularized logistic regression
 │
 ├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
 │                         generated with `pip freeze > requirements.txt`
-│
-├── setup.cfg          <- Configuration file for flake8
 │
 └── cyclic_coordinate_descent_in_lr   <- Source code for use in this project.
     │
