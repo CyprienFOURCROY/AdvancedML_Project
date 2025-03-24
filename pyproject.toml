@@ -1,0 +1,32 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "cyclic_coordinate_descent_in_lr"
+version = "0.0.1"
+description = "Implementation of cyclic coordinate descent for regularized logistic regression"
+authors = [
+  { name = "CPM" },
+]
+
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    
+]
+requires-python = "~=3.10.0"
+
+
+[tool.ruff]
+line-length = 99
+src = ["cyclic_coordinate_descent_in_lr"]
+include = ["pyproject.toml", "cyclic_coordinate_descent_in_lr/**/*.py"]
+
+[tool.ruff.lint]
+extend-select = ["I"]  # Add import sorting
+
+[tool.ruff.lint.isort]
+known-first-party = ["cyclic_coordinate_descent_in_lr"]
+force-sort-within-sections = true
+
