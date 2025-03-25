@@ -6,6 +6,65 @@
 
 Implementation of cyclic coordinate descent for regularized logistic regression
 
+## Prerequisites
+It's optional however recommended to use `GNU make`.
+
+
+`GNU make` installation:
+```
+https://gnuwin32.sourceforge.net/packages/make.htm    // Windows
+brew install make                                     // macOS - requires Homebrew installed
+```
+
+## Installing repository
+
+### Cloning repository
+
+First clone the repository (for example using https)
+```
+git clone https://github.com/CyprienFOURCROY/AdvancedML_Project.git
+```
+
+### Setup with make
+
+```
+make create_enviroment
+
+source ~/Envs/ccd_LR/Scripts/activate    // Windows
+source ~/Envs/ccd_LR/bin/activate        // macOS and Linux
+
+make requirements
+```
+
+#### Helpful make commands 
+```
+requirements             Install Python dependencies
+clean                    Delete all compiled Python files
+lint                     Lint using ruff (use `make format` to do formatting)
+format                   Format source code with ruff
+create_environment       Set up Python interpreter environment
+data                     Make dataset
+```
+
+### Setup without make
+
+```
+python -m venv <myenvpath>             // if python doesn't work use command apropriate to your python interpreter
+
+source <myenvpath>/Scripts/activate    // Windows
+source <myenvpath>/bin/activate        // macOS and Linux
+
+pip install -r requirements.txt
+```
+
+## Cyclic coordinate descent 
+
+<img src="reports/figures/Coordinate_descent.svg.png" />
+
+### Algorithm explanation:
+Cyclic coordinate descent is a fairly simple optimization algorithm. It looks at one feature at a time and minimizes loss while the rest of the features stay constant. 
+
+
 ## Project Organization
 
 ```
