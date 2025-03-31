@@ -28,7 +28,12 @@ class LogRegCDD:
         X = X - X.mean(axis=0)
         self.X_mean = X.mean(axis=0)
         self.coef_path_ = []
-        self.lambda_max = np.max(np.abs(X.T @ (y - y.mean()))) / (n * self.alpha)
+        if self.alpha == 0:
+    
+            self.lambda_max = 1.0  
+        else:
+            self.lambda_max = np.max(np.abs(X.T @ (y - y.mean()))) / (n * self.alpha)
+
         self.lambdas_ = np.logspace(
             np.log10(self.lambda_max),
             np.log10(self.lambda_max * self.lambda_min_ratio),
