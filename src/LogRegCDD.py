@@ -45,9 +45,13 @@ class LogRegCDD:
                     pj = np.sum(w * X[:, j] ** 2)
                     if pj < 1e-8:
                         continue
-                    beta[j] = self._soft_threshold(zj / pj, lam * self.alpha) / (
-                        1 + lam * (1 - self.alpha) / pj
-                    )
+                    if self.alpha == 0:
+                        beta[j] = zj / (pj + lam)
+                    else:
+                        beta[j] = self._soft_threshold(zj / pj, lam * self.alpha) / (
+                            1 + lam * (1 - self.alpha) / pj
+                        )
+
                 if np.linalg.norm(beta - beta_old, ord=1) < self.tol:
                     break
             self.coef_path_.append(beta.copy())
