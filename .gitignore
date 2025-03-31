@@ -3,7 +3,11 @@
 
 # Mac OS-specific storage files
 .DS_Store
-/data/
+/data/preprocessed/mnist_train.csv
+/data/preprocessed/mnist_test.csv
+/data/raw/mnist/mnist_train.csv
+/data/raw/mnist/mnist_test.csv
+
 # vim
 *.swp
 *.swo
